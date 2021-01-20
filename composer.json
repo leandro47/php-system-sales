@@ -1,0 +1,12 @@
+{
+    "name": "leandro47/php-system-sales",
+    "description": "Sales system using PHP without frameworks",
+    "license": "",
+    "authors": [
+        {
+            "name": "leandro47",
+            "email": "leandrosilva47@live.com"
+        }
+    ],
+    "require": {}
+}
