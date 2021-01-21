@@ -1,10 +1,14 @@
 <?php
+use CoffeeCode\Router\Router;
 
-use Pecee\SimpleRouter\SimpleRouter;
+$router = new Router(BASEURL);
+$router->namespace('App\Controllers');
 
-SimpleRouter::setDefaultNamespace('App\Controllers');
+$router->get("/" , "ProductController:index");
 
-SimpleRouter::get('/', 'ProductController@index');
+$router->dispatch();
+
+
 
 
 
