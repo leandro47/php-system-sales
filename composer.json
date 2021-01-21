@@ -8,5 +8,19 @@
             "email": "leandrosilva47@live.com"
         }
     ],
-    "require": {}
+    "require": {
+        "php": "^7.4"
+    },
+    "autoload": {
+          "psr-4": {
+            "App\\": "app/",
+            "vendor\\": "vendor/"
+        },
+        "files": [
+            "App/Config/config.php",
+            "App/Config/app.php",
+            "App/Config/database.php"
+        ]
+    }
+    
 }
