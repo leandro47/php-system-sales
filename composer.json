@@ -14,8 +14,9 @@
     },
     "autoload": {
           "psr-4": {
-            "App\\": "app/",
-            "vendor\\": "vendor/"
+            "App\\": "App",
+            "System\\": "System",
+            "vendor\\": "vendor"
         },
         "files": [
             "App/Config/config.php",
