@@ -17,7 +17,7 @@ class SaleController extends Controller
         $this->saleService = new SaleService;
         $this->saleValidation = new SaleValidation();
 
-        $this->data['titlePage'] = 'Sale';
+        $this->data['titlePage'] = 'Venda';
     }
 
     public function index()

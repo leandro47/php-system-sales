@@ -14,5 +14,8 @@ SimpleRouter::setDefaultNamespace('App\Controllers');
 
 SimpleRouter::get('/', 'SaleController@index');
 SimpleRouter::get('/sale', 'SaleController@index');
+SimpleRouter::get('/categoria', 'TypeProductController@index');
+SimpleRouter::get('/getAllCategories', 'TypeProductController@getAll');
+
 
 

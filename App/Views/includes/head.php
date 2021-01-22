@@ -10,6 +10,13 @@
     <link rel="stylesheet" href="<?= CONFIG['baseUrl'] . '/assets/css/materialize.min.css' ?>">
     <link rel="stylesheet" href="<?= CONFIG['baseUrl'] . '/assets/css/style.css' ?>">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!-- DataTables  -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/v/bs4/dt-1.10.23/datatables.min.css">
+
+    <script>
+        const BASE_URL = "<?= CONFIG['baseUrl'] ?>"
+    </script>
 </head>
 
 <body class="teal lighten-5">
@@ -25,9 +32,6 @@
                 <i class="large material-icons">mode_edit</i>
             </a>
             <ul>
-                <li><a class="btn-floating red"><i class="material-icons">insert_chart</i></a></li>
-                <li><a class="btn-floating yellow darken-1"><i class="material-icons">format_quote</i></a></li>
-                <li><a class="btn-floating green"><i class="material-icons">publish</i></a></li>
-                <li><a class="btn-floating blue"><i class="material-icons">attach_file</i></a></li>
+                <li><a href="<?= CONFIG['baseUrl'] . "/categoria" ?>" class="btn-floating red tooltipped" data-position="left" data-tooltip="Tipo produto"><i class="material-icons">format_list_bulleted</i></a></li>
             </ul>
         </div>

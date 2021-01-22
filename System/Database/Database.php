@@ -29,6 +29,6 @@ class Database
     public function run(string $sql)
     {
         $result =  $this->conection->query($sql)->fetchAll();
-        return (object) $result[0];
+        return $result;
     }
 }
