@@ -2,7 +2,10 @@
 
 namespace App\Controllers;
 
+use App\Helpers\UtilsHelper;
 use App\Models\ProductModel;
+use System\Response\Response;
+use System\View\View;
 
 class ProductController
 {
@@ -13,9 +16,13 @@ class ProductController
         $this->productModel = new ProductModel();
     }
 
-    public function index()
+    public function home()
     {
-        $products = $this->productModel->get();
-        var_dump($products->description);
+      echo 'home';
+    }
+
+    public function teste()
+    {
+        echo 'teste';
     }
 }
