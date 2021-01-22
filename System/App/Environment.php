@@ -1,10 +1,15 @@
 <?php
 
-// ==================================================
-// ENVIRONMENT CONFIGURATION 
-// ==================================================
-
-switch (ENVIRONMENT) {
+/**
+ * -----------------------------------------------
+ * CONFIG ENVIRONMENT
+ * -----------------------------------------------
+ * 
+ * Set configurations in 'App/Config/config.php'
+ * 
+ * 
+ */
+switch (CONFIG['environment']) {
     case 'development':
         error_reporting(-1);
         ini_set('display_errors', 1);

@@ -2,10 +2,19 @@
 
 namespace App\Services;
 
+use App\Models\SaleModel;
+
 class SaleService
-{ 
-    function __construct()
+{
+    protected $saleModel;
+
+    public function __construct()
     {
+        $this->saleModel = new SaleModel;
+    }
+
+    public function get()
+    { 
         
     }
 }

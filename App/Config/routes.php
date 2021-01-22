@@ -2,9 +2,17 @@
 
 use Pecee\SimpleRouter\SimpleRouter;
 
+// ==================================================
+// NAMESPACE
+// ==================================================
+
 SimpleRouter::setDefaultNamespace('App\Controllers');
 
-SimpleRouter::get('/', 'ProductController@home');
-SimpleRouter::get('/teste', 'ProductController@teste');
+// ==================================================
+// DEFINE ROUTES
+// ==================================================
+
+SimpleRouter::get('/', 'SaleController@index');
+SimpleRouter::get('/sale', 'SaleController@index');
 
 

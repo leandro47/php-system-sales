@@ -1,23 +1,16 @@
 <?php
 
 // ==================================================
-// DEFINE BASE URL
+// BASE URL
 // ==================================================
 
-define('BASEURL', 'http://localhost:8080');
+$config['baseUrl'] = 'http://localhost:8080';
 
 // ==================================================
 // ENVIRONMENT
 // ==================================================
 
-define('ENVIRONMENT', 'development');
+$config['environment'] = 'development';
 
 // ==================================================
-
-
-
-
-
-
-
-
+define('CONFIG', $config);
