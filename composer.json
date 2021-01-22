@@ -10,7 +10,7 @@
     ],
     "require": {
         "php": "^7.4",
-        "coffeecode/router": "^1.0"
+        "pecee/simple-router": "4.2.0.6"
     },
     "autoload": {
         "psr-4": {

@@ -1,26 +1,10 @@
 <?php
-use CoffeeCode\Router\Router;
 
-$router = new Router(BASEURL);
+use Pecee\SimpleRouter\SimpleRouter;
 
-/**
- * routes
- */
-$router->namespace('App\Controllers');
+SimpleRouter::setDefaultNamespace('App\Controllers');
 
-$router->get("/" , "ProductController:home");
-$router->get("/teste" , "ProductController:teste");
-
-$router->dispatch();
-
-if ($router->error()) {
-    var_dump($router->error());
-    //router->redirect("/error/{$router->error()}");
-}
-
-
-
-
-
+SimpleRouter::get('/', 'ProductController@home');
+SimpleRouter::get('/teste', 'ProductController@teste');
 
 

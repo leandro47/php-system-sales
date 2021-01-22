@@ -4,7 +4,7 @@
 // DEFINE BASE URL
 // ==================================================
 
-define('BASEURL', 'http://localhost:8080/');
+define('BASEURL', 'http://localhost:8080');
 
 // ==================================================
 // ENVIRONMENT
