@@ -1,5 +1,9 @@
 <?php
 
+// ==================================================
+// ENVIRONMENT CONFIGURATION 
+// ==================================================
+
 switch (ENVIRONMENT) {
     case 'development':
         error_reporting(-1);
