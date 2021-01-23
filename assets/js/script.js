@@ -12,3 +12,6 @@ $(document).ready(function () {
 $(document).ready(function () {
     $('.modal').modal();
 });
+
+//Mask
+$('.imposed').mask('##0.00', {reverse: true});

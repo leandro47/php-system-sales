@@ -33,7 +33,7 @@ class Database
 
     // ==================================================
 
-    public function run(string $sql)
+    protected function run(string $sql)
     {
         $result =  $this->conection->query($sql)->fetchAll();
         return $result;
@@ -41,7 +41,7 @@ class Database
 
     // ==================================================
 
-    public function get()
+    protected function get()
     {
         $sql = "SELECT * FROM {$this->table} order by id desc";
         return $this->conection->query($sql)->fetchAll();
@@ -49,7 +49,7 @@ class Database
 
     // ==================================================
 
-    public function insert(array $datas) 
+    protected function insert(array $datas)
     {
         $fields = array_keys($datas);
         $fields = implode(", ", $fields);
@@ -67,6 +67,23 @@ class Database
         try {
             $pre->execute(array_values($datas));
             return (int) $this->conection->lastInsertId();
+        } catch (Exception $e) {
+            return $e->getMessage();
+        }
+    }
+
+    // ==================================================
+
+    protected function update(int $id, array $datas)
+    {
+        $fields = implode("=?, ", array_keys($datas)) . '= ?';
+
+        $query = "UPDATE {$this->table} set {$fields} where id = {$id}";
+        $pre = $this->conection->prepare($query);
+
+        try {
+            $pre->execute(array_values($datas));
+            return false;
         } catch (Exception $e) {
             return $e->getMessage();
         }

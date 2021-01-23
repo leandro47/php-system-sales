@@ -63,7 +63,6 @@ if ($('#type_product').length) {
                 dataType: 'json',
                 success: function (data) {
 
-                    console.log(data);
                     $('#modalAdd').modal('close');
                     $('#imposed').val('');
                     $('#description').val('');

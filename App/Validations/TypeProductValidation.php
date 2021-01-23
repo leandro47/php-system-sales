@@ -6,7 +6,7 @@ use System\Validation\Validation;
 
 class TypeProductValidation extends Validation
 {
-    public function insert(array $datas): array
+    public function validateTypeProduct(array $datas): array
     {
         return $this->validate($datas);
     }

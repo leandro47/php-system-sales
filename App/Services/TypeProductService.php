@@ -41,4 +41,26 @@ class TypeProductService
             ]
         ];
     }
+
+    public function update(int $id, $datas)
+    {
+        $result = $this->typeProductModel->updateTypeProduct($id, $datas);
+
+        if ($result) {
+            return [
+                'code' => Response::HTTP_INTERNAL_SERVER_ERROR,
+                'message' => $result,
+                'data' => [
+                    'icon' => 'error'
+                ]
+            ];
+        }
+        return [
+            'code' => Response::HTTP_OK,
+            'message' => 'Atualizado com sucesso!',
+            'data' => [
+                'icon' => 'success'
+            ]
+        ];
+    }
 }

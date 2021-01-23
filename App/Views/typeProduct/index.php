@@ -45,7 +45,7 @@
                     </div>
                     <div class="input-field col s6">
                         <i class="material-icons prefix">confirmation_number</i>
-                        <input id="imposed" name="imposed" type="number" class="validate" required>
+                        <input id="imposed" name="imposed" type="text" class="validate imposed" required>
                         <label for="imposed">% Imposto</label>
                     </div>
                 </div>

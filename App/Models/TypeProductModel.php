@@ -21,4 +21,9 @@ class TypeProductModel extends Database
     {
         return $this->insert($datas);
     }
+
+    public function updateTypeProduct(int $id, array $datas)
+    {
+        return $this->update($id, $datas);
+    }
 }

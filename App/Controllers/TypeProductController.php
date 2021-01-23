@@ -40,12 +40,17 @@ class TypeProductController extends Controller
         $this->fields['description'] = $this->post('description', true);
         $this->fields['percentageImposed'] = $this->post('imposed', true);
 
-        $validation = $this->typeProductValidation->insert($this->fields);
+        $validation = $this->typeProductValidation->validateTypeProduct($this->fields);
 
         if ($validation['code'] !== Response::HTTP_OK)
             return Response::sendDatas($validation);
 
         $insert = $this->typeProductServices->insert($this->fields);
         return Response::sendDatas($insert);
+    }
+
+    public function update()
+    {
+        //
     }
 }

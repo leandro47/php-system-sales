@@ -6,7 +6,7 @@ use System\Response\Response;
 
 class Validation
 {
-    protected $validations;
+    private $validations;
 
     public function validate(array $datas): ?array
     {
