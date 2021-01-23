@@ -5,6 +5,7 @@ namespace System\Database;
 class Database
 {
     protected $conection;
+    protected $table;
 
     public function __construct()
     {
@@ -30,5 +31,16 @@ class Database
     {
         $result =  $this->conection->query($sql)->fetchAll();
         return $result;
+    }
+
+    public function insert(array $datas)
+    {
+        $query   = "INSERT INTO {$this->table} values(id, :id, 7.5)";
+
+        $prepare = $this->conection->prepare($query);
+        $prepare->bindValue(':id', 'testednv');
+
+        return $prepare->execute($datas);
+
     }
 }

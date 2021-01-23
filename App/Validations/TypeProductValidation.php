@@ -2,13 +2,12 @@
 
 namespace App\Validations;
 
-class TypeProductValidation
-{
-    public function __construct()
-    { }
+use System\Validation\Validation;
 
-    public function get()
-    { 
-        
+class TypeProductValidation extends Validation
+{
+    public function insert(array $datas): array
+    {
+        return $this->validate($datas);
     }
 }

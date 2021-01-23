@@ -10,7 +10,7 @@ if ($('#type_product').length) {
             destroy: true,
             responsive: false,
             ajax: {
-                url: `${BASE_URL}/getAllCategories`,
+                url: `${BASE_URL}/getallcategories`,
                 dataType: "json",
                 cache: false,
                 dataSrc: (data) => {
@@ -52,4 +52,36 @@ if ($('#type_product').length) {
             ]
         })
     }
+
+    $(document).ready(function () {
+        $('#add').submit(function () {
+            var dados = $(this).serialize();
+            $.ajax({
+                type: "POST",
+                url: `${BASE_URL}/savecategorie`,
+                data: dados,
+                dataType: 'json',
+                success: function (data) {
+
+                    console.log(data);
+                    $('#modalAdd').modal('close');
+                    $('#imposed').val('');
+                    $('#description').val('');
+
+                    Swal.fire({
+                        icon: data.data.icon,
+                        title: data.message,
+                        showConfirmButton: false,
+                        timer: 2000
+                    })
+
+                    requestDatas();
+                },
+                error: function (data) {
+                    console.log(data);
+                }
+            });
+            return false;
+        });
+    });
 }

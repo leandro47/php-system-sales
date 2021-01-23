@@ -3,7 +3,12 @@ $(document).ready(function () {
     $('.fixed-action-btn').floatingActionButton();
 });
 
-//Tolptips
+//Tooltips
 $(document).ready(function () {
     $('.tooltipped').tooltip();
+});
+
+//Modals
+$(document).ready(function () {
+    $('.modal').modal();
 });

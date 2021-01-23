@@ -30,8 +30,22 @@ class TypeProductController extends Controller
     }
 
     public function getAll()
-    { 
+    {
         $datas = $this->typeProductServices->getAll();
         Response::sendDatas($datas);
+    }
+
+    public function insert()
+    {
+        $this->fields['description'] = $this->post('description', true);
+        $this->fields['imposed'] = $this->post('imposed', true);
+
+        $validation = $this->typeProductValidation->insert($this->fields);
+
+        if ($validation['code'] !== Response::HTTP_OK)
+            return Response::sendDatas($validation);
+
+        $insert = $this->typeProductServices->insert($this->fields);
+        return Response::sendDatas($insert);
     }
 }
