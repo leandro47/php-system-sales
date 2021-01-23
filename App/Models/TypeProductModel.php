@@ -26,4 +26,9 @@ class TypeProductModel extends Database
     {
         return $this->update($id, $datas);
     }
+
+    public function deleteTypeProduct(int $id)
+    { 
+        return $this->delete($id);
+    }
 }

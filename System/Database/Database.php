@@ -88,4 +88,19 @@ class Database
             return $e->getMessage();
         }
     }
+
+    // ==================================================
+
+    protected function delete(int $id)
+    {
+        $query = "DELETE FROM {$this->table} where id = ?";
+        $pre = $this->conection->prepare($query);
+
+        try {
+            $pre->execute([$id]);
+            return false;
+        } catch (Exception $e) {
+            return $e->getMessage();
+        }
+    }
 }

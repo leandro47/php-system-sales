@@ -23,6 +23,9 @@ SimpleRouter::get('/sale', 'SaleController@index');
 SimpleRouter::get('/categoria', 'TypeProductController@index');
 SimpleRouter::get('/getallcategories', 'TypeProductController@getAll');
 SimpleRouter::post('/savecategorie', 'TypeProductController@insert');
+SimpleRouter::put('/updatecategorie', 'TypeProductController@update');
+SimpleRouter::delete('/deletecategorie', 'TypeProductController@delete');
+
 
 
 

@@ -58,3 +58,55 @@
         </div>
     </form>
 </div>
+
+<div id="modalUpdate" class="modal">
+    <form id="update" action="" method="">
+        <input id="idUpdate" hidden name="idUpdate" type="text" class="" required>
+        <div class="modal-content">
+            <h4>Atualizar</h4>
+            <div class="divider"></div>
+            <div class="row mt-4">
+                <div class="row">
+                    <div class="input-field col s6">
+                        <i class="material-icons prefix">comment</i>
+                        <input id="updateDescription" name="updateDescription" type="text" class="validate" required>
+                        <span class="helper-text">Descrição</span>
+
+                    </div>
+                    <div class="input-field col s6">
+                        <i class="material-icons prefix">confirmation_number</i>
+                        <input id="updateImposed" name="updateImposed" type="text" class="validate imposed" required>
+                        <span class="helper-text">% Imposto</span>
+                    </div>
+                </div>
+            </div>
+            <div class="divider"></div>
+        </div>
+        <div class="modal-footer">
+            <a href="#!" class="modal-close waves-effect grey lighten-1 btn">Fechar</a>
+            <button type="submit" class="waves-effect waves-green btn">Salvar</button>
+        </div>
+    </form>
+</div>
+
+<div id="modalDelete" class="modal">
+    <form id="delete" action="" method="">
+        <input id="idDelete" hidden name="idDelete" type="text" class="" required>
+        <div class="modal-content">
+            <h4>Deletar</h4>
+            <div class="divider"></div>
+            <div class="row mt-4">
+                <div class="row">
+                    <div class="s12">
+                        <h6>Deseja realmente deletar a categoria <b id="descriptionDelete"></b></h6>
+                    </div>
+                </div>
+            </div>
+            <div class="divider"></div>
+        </div>
+        <div class="modal-footer">
+            <a href="#!" class="modal-close waves-effect grey lighten-1 btn">Fechar</a>
+            <button type="submit" class="waves-effect waves-green btn">Deletar</button>
+        </div>
+    </form>
+</div>
