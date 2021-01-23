@@ -2,13 +2,12 @@
 
 namespace App\Validations;
 
-class SaleValidation
-{
-    public function __construct()
-    { }
+use System\Validation\Validation;
 
-    public function get()
-    { 
-        
+class SaleValidation extends Validation
+{
+    public function validateSale(array $datas): array
+    {
+        return $this->validate($datas);
     }
 }

@@ -12,6 +12,7 @@ SimpleRouter::setDefaultNamespace('App\Controllers');
 // DEFINE ROUTES
 // ==================================================
 
+//Start
 SimpleRouter::get('/', 'SaleController@index');
 
 //Sale
