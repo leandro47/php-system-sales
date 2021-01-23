@@ -11,12 +11,10 @@ class TypeProductModel extends Database
         parent::__construct();
         $this->table = 'typeProduct';
     }
+
     public function getAll()
     {
-        $sql = 'SELECT * FROM typeProduct';
-
-        $result = $this->run($sql);
-        return $result;
+        return $this->get();
     }
 
     public function insertTypeProduct(array $datas)

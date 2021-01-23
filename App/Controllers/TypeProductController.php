@@ -38,7 +38,7 @@ class TypeProductController extends Controller
     public function insert()
     {
         $this->fields['description'] = $this->post('description', true);
-        $this->fields['imposed'] = $this->post('imposed', true);
+        $this->fields['percentageImposed'] = $this->post('imposed', true);
 
         $validation = $this->typeProductValidation->insert($this->fields);
 

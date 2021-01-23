@@ -2,6 +2,8 @@
 
 namespace System\Database;
 
+use Exception;
+
 class Database
 {
     protected $conection;
@@ -11,6 +13,8 @@ class Database
     {
         $this->getConection();
     }
+
+    // ==================================================
 
     private function getConection()
     {
@@ -27,20 +31,44 @@ class Database
         }
     }
 
+    // ==================================================
+
     public function run(string $sql)
     {
         $result =  $this->conection->query($sql)->fetchAll();
         return $result;
     }
 
-    public function insert(array $datas)
+    // ==================================================
+
+    public function get()
     {
-        $query   = "INSERT INTO {$this->table} values(id, :id, 7.5)";
+        $sql = "SELECT * FROM {$this->table} order by id desc";
+        return $this->conection->query($sql)->fetchAll();
+    }
 
-        $prepare = $this->conection->prepare($query);
-        $prepare->bindValue(':id', 'testednv');
+    // ==================================================
 
-        return $prepare->execute($datas);
+    public function insert(array $datas) 
+    {
+        $fields = array_keys($datas);
+        $fields = implode(", ", $fields);
 
+        $bind = [];
+        foreach ($datas as $data)
+            $bind[] = "?";
+
+        $bind = implode(", ", $bind);
+
+        $query = "INSERT INTO {$this->table} ({$fields}) VALUES ({$bind})";
+
+        $pre = $this->conection->prepare($query);
+
+        try {
+            $pre->execute(array_values($datas));
+            return (int) $this->conection->lastInsertId();
+        } catch (Exception $e) {
+            return $e->getMessage();
+        }
     }
 }

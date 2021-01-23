@@ -27,7 +27,7 @@ if ($('#type_product').length) {
                 }
             },
             order: [
-                [0, 'desc']
+              
             ],
             columns: [{
                 data: "description",
