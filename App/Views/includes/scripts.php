@@ -8,6 +8,7 @@
 
 <!-- Script by page  -->
 <script src="<?= CONFIG['baseUrl'] . '/assets/pages/type_product.js' ?>"></script>
+<script src="<?= CONFIG['baseUrl'] . '/assets/pages/product.js' ?>"></script>
 
 </body>
 

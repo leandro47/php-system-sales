@@ -16,14 +16,14 @@
         </div>
         <div class="col s12 m12 l12">
             <table class="" id="table_type_product">
-                <thead>
+                <thead class="head-table">
                     <tr>
                         <th class="center-align">Descrição</th>
                         <th class="center-align">% Imposto</th>
                         <th class="center-align">Ações</th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody class="font-size-5">
 
                 </tbody>
             </table>
@@ -98,7 +98,7 @@
             <div class="row mt-4">
                 <div class="row">
                     <div class="s12">
-                        <h6>Deseja realmente deletar a categoria <b id="descriptionDelete"></b></h6>
+                        <h6>Deseja realmente deletar a categoria <b id="descriptionDelete"></b> ?</h6>
                     </div>
                 </div>
             </div>

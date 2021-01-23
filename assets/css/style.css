@@ -49,3 +49,16 @@
 .mb-4 {
     margin-bottom: 20px !important;
 }
+
+/* _____________________________________  */
+
+.font-size-5{
+    font-size: 25px;
+}
+
+/* _____________________________________  */
+
+.head-table{
+    color:white;
+    background-color: #967171;
+}

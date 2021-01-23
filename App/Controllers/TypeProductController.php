@@ -51,7 +51,7 @@ class TypeProductController extends Controller
 
     public function update()
     {
-        $id = $this->put('idUpdate', true);
+        $id = $this->put('idUpdate', true, FILTER_SANITIZE_NUMBER_INT);
         $this->fields['description'] = $this->put('updateDescription', true);
         $this->fields['percentageImposed'] = $this->put('updateImposed', true);
 

@@ -29,9 +29,12 @@
 
         <div class="fixed-action-btn">
             <a class="btn-floating btn-large red">
-                <i class="large material-icons">mode_edit</i>
+                <i class="large material-icons">touch_app</i>
             </a>
             <ul>
-                <li><a href="<?= CONFIG['baseUrl'] . "/categoria" ?>" class="btn-floating red tooltipped" data-position="left" data-tooltip="Tipo produto"><i class="material-icons">format_list_bulleted</i></a></li>
+                <li><a href="<?= CONFIG['baseUrl'] . "/categoria" ?>" class="btn-floating green tooltipped" data-position="left" data-tooltip="Tipo produto"><i class="material-icons">format_list_bulleted</i></a></li>
+                <li><a href="<?= CONFIG['baseUrl'] . "/product" ?>" class="btn-floating blue tooltipped" data-position="left" data-tooltip="Produto"><i class="material-icons">shopping_cart</i></a></li>
+                <li><a href="<?= CONFIG['baseUrl'] . '/' ?>" class="btn-floating purple tooltipped" data-position="left" data-tooltip="Inicio"><i class="material-icons">home</i></a></li>
+
             </ul>
         </div>

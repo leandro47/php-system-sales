@@ -13,4 +13,10 @@ class UtilsHelper
             echo $d;
         }
     }
+
+    public static function formatMoney($value): float
+    {
+        $return = str_replace('.', '', $value);
+        return str_replace(',', '.', $return);
+    }
 }

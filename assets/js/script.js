@@ -15,8 +15,14 @@ $(document).ready(function () {
 
 //Mask
 $('.imposed').mask('##0.00', { reverse: true });
+$('.price').mask('#.##0,00', { reverse: true });
 
 //Active inputs
 $(document).ready(function () {
     M.updateTextFields();
+});
+
+//Select 
+$(document).ready(function () {
+    $('select').formSelect();
 });
