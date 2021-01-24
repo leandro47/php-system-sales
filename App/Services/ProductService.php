@@ -14,12 +14,22 @@ class ProductService
         $this->productModel = new ProductModel;
     }
 
-    public function  getAll()
+    public function getAll()
     {
         return $this->productModel->getAll();
     }
 
-    public function insert(array $datas) : array
+    public function getByType(int $idType)
+    {
+        return $this->productModel->getByType($idType);
+    }
+
+    public function getById(int $id)
+    {
+        return $this->productModel->getById($id);
+    }
+
+    public function insert(array $datas): array
     {
         $result =  $this->productModel->insertProduct($datas);
 
@@ -42,7 +52,7 @@ class ProductService
         ];
     }
 
-    public function update(int $id, $datas) : array
+    public function update(int $id, $datas): array
     {
         $result = $this->productModel->updateProduct($id, $datas);
 
@@ -64,8 +74,8 @@ class ProductService
         ];
     }
 
-    public function delete(int $id) : array
-    { 
+    public function delete(int $id): array
+    {
         $result = $this->productModel->deleteProduct($id);
 
         if ($result) {

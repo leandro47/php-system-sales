@@ -15,7 +15,7 @@
             <div class="divider"></div>
         </div>
         <div class="col s12 m12 l12">
-            <table class="" id="table_product">
+            <table class="responsive-table" id="table_product">
                 <thead class="head-table">
                     <tr>
                         <th class="center-align">Descrição</th>

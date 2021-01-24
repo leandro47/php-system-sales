@@ -28,6 +28,8 @@ SimpleRouter::delete('/deletecategorie', 'TypeProductController@delete');
 //Product
 SimpleRouter::get('/product', 'ProductController@index'); 
 SimpleRouter::get('/getallproduct', 'ProductController@getAll');
+SimpleRouter::get('/getproductbyid{id}', 'ProductController@getById');
+SimpleRouter::get('/getproductbytype{id}', 'ProductController@getByType');
 SimpleRouter::post('/saveproduct', 'ProductController@insert');
 SimpleRouter::put('/updateproduct', 'ProductController@update');
 SimpleRouter::delete('/deleteproduto', 'ProductController@delete');

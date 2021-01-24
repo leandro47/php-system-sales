@@ -28,6 +28,18 @@ class ProductModel extends Database
         return $this->run($sql);
     }
 
+    public function getByType(int $idType)
+    {
+        $sql = "SELECT * FROM product where idType = {$idType}";
+        return $this->run($sql);
+    }
+
+    public function getById(int $id)
+    {
+        $sql = "SELECT FORMAT(p.price, 2, 'de_DE')price, (t.percentageImposed)imposed FROM product as p join typeProduct as t on p.idType = t.id where p.id = {$id}";
+        return $this->run($sql);
+    }
+
     public function insertProduct(array $datas)
     {
         return $this->insert($datas);

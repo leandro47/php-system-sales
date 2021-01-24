@@ -33,7 +33,27 @@ class ProductController extends Controller
     public function getAll()
     {
         $datas = $this->productServices->getAll();
-        Response::sendDatas($datas);
+        return Response::sendDatas($datas);
+    }
+
+    public function getByType(int $idType = null)
+    {
+        $validation = $this->productValidation->validateProduct(['idType' => $idType]);
+        if ($validation['code'] !== Response::HTTP_OK)
+            return Response::sendDatas($validation);
+
+        $datas = $this->productServices->getByType($idType);
+        return Response::sendDatas($datas);
+    }
+
+    public function getById(int $id = null)
+    { 
+        $validation = $this->productValidation->validateProduct(['id' => $id]);
+        if ($validation['code'] !== Response::HTTP_OK)
+            return Response::sendDatas($validation);
+
+        $datas = $this->productServices->getById($id);
+        return Response::sendDatas($datas);
     }
 
     public function insert()
