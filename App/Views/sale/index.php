@@ -87,17 +87,17 @@
             <h5>Itens</h5>
         </div>
         <div class="col s12">
-            <table class="responsive-table mt-3" id="tableItens">
+            <table class="responsive-table" id="table_itenSale">
                 <thead class="head-table">
                     <tr>
-                        <th class="center-align">Produto</th>
-                        <th class="center-align">Qtd.</th>
-                        <th class="center-align">TotalPago</th>
-                        <th class="center-align">Ações</th>
+                        <th>Produto</th>
+                        <th>Qtd.</th>
+                        <th>% Imposto</th>
+                        <th>TotalPago</th>
                     </tr>
                 </thead>
-                <tbody class="font-size-5">
 
+                <tbody>
                 </tbody>
             </table>
         </div>

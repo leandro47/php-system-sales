@@ -1,8 +1,11 @@
 if ($('#sale').length) {
 
+    var itenSaleImpo = 0;
+    var itenSalePrice = 0;
+    var itemTable = null;
+
     $(document).ready(function () {
         requestType();
-        $('#tableItens').DataTable();
     })
 
     function requestType() {
@@ -62,20 +65,17 @@ if ($('#sale').length) {
             dataType: 'json',
             success: function (data) {
                 fillItem(data[0].price, data[0].imposed, qtd);
+                itemTable = data[0];
             },
             error: function (data) {
                 console.error(data);
             }
         });
-        console.log('al')
         $('#btnAdd').removeClass('disabled')
     }
 
-    var itenSaleImpo = 0;
-    var itenSalePrice = 0;
-
     function fillItem(price, imposed, qtd) {
-     
+
         let pric = realDecimal(price);
         let imp = imposed / 100;
         let impUni = pric * imp;
@@ -97,22 +97,25 @@ if ($('#sale').length) {
 
         //imposed
         let atualImposed = parseFloat(realDecimal($('#totalImposed').val()));
-        let newImposed =  itenSaleImpo;
-        console.log(itenSaleImpo)
-        console.log(newQtd)
+        let newImposed = itenSaleImpo;
 
         //vlrSale
         let atualSale = parseFloat(realDecimal($('#totalSale').val()));
         let newSale = itenSalePrice * newQtd;
 
         // //TotalPay
-        // let atualPay = parseFloat(realDecimal($('#totalPay').val()));
-        // let newPay = sum(atualImposed, newImposed) + sum(atualSale, newSale);
+        let atualPay = parseFloat(realDecimal($('#totalPay').val()));
+        let newPay = sum(atualImposed, newImposed) + sum(atualSale, newSale);
+
+        let total = decimalReal(sum(atualImposed, newImposed) + sum(atualSale, newSale))
 
         $('#totalQtdItens').val(sum(atualQtd, newQtd));
         $('#totalImposed').val(decimalReal(sum(atualImposed, newImposed)));
         $('#totalSale').val(decimalReal(sum(atualSale, newSale)));
-        // $('#totalPay').val(decimalReal(sum(atualPay + newPay)));
+        $('#totalPay').val(total);
+
+        //addTable
+        getItensTable();
 
         $('#qtd').val(1);
         $('#priceUnid').val(`R$ 0,00`);
@@ -125,4 +128,21 @@ if ($('#sale').length) {
         requestType();
         $('#btnAdd').addClass('disabled')
     }
+
+    function getItensTable() {
+        let qtd = $('#qtd').val();
+        let pri = realDecimal(itemTable.price);
+        let imposed = (itemTable.imposed / 100) + 1;
+        let ttl = (pri * qtd) * imposed;
+        strItem = `
+        <tr>
+            <td>${itemTable.description}</td>
+            <td>${qtd}</td>
+            <td>${itemTable.imposed}</td>
+            <td>${decimalReal(ttl)}</td>
+        </tr>`
+
+        $('#table_itenSale').append(strItem)
+    }
+
 }

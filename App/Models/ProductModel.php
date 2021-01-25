@@ -36,7 +36,7 @@ class ProductModel extends Database
 
     public function getById(int $id)
     {
-        $sql = "SELECT FORMAT(p.price, 2, 'de_DE')price, (t.percentageImposed)imposed FROM product as p join typeProduct as t on p.idType = t.id where p.id = {$id}";
+        $sql = "SELECT p.description, FORMAT(p.price, 2, 'de_DE')price, (t.percentageImposed)imposed FROM product as p join typeProduct as t on p.idType = t.id where p.id = {$id}";
         return $this->run($sql);
     }
 
