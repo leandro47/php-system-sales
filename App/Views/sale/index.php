@@ -26,7 +26,7 @@
 
         <div class="input-field col s12 m4">
             <i class="material-icons prefix">loupe</i>
-            <input id="qtd" name="qtd" disabled value="1" onkeyup="datasItem()" onclick="datasItem()" onkeypress="return event.charCode >= 48" min="1" type="number" class="validate" required>
+            <input id="qtd" name="qtd" disabled value="1" onkeyup="datasItem()" onclick="datasItem()" onkeypress="return event.charCode >= 48" min="1" max="100" type="number" class="validate qtd" required>
             <label for="qtd">Quantidade</label>
         </div>
 
@@ -80,6 +80,11 @@
             <input disabled value="0,00" type="text" id="totalPay" name="totalPay" class="validate">
             <label for="totalPay">Total a Pagar</label>
         </div>
+
+        <div class="input-field col s12">
+            <div class="divider"></div>
+            <a class="waves-effect right mt-3 waves-light btn disabled" id="btnSave" onclick="saveSale()"><i class="material-icons left">done</i>Finalizar</a>
+        </div>
     </div>
 
     <div class="row z-depth-1 ml-3 mb-3 mr-3">
@@ -92,13 +97,14 @@
                     <tr>
                         <th>Id Produto</th>
                         <th>Produto</th>
+                        <th>Vlr. Unit</th>
                         <th>Qtd.</th>
                         <th>% Imposto</th>
                         <th>TotalPago</th>
                     </tr>
                 </thead>
                 <tbody>
-                   
+                 
                 </tbody>
             </table>
         </div>

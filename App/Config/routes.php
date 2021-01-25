@@ -17,6 +17,7 @@ SimpleRouter::get('/', 'SaleController@index');
 
 //Sale
 SimpleRouter::get('/sale', 'SaleController@index');
+SimpleRouter::post('/savesale', 'SaleController@insert');
 
 //Type product
 SimpleRouter::get('/categoria', 'TypeProductController@index');

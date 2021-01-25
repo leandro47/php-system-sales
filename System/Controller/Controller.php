@@ -2,6 +2,8 @@
 
 namespace System\Controller;
 
+use App\Helpers\UtilsHelper;
+
 class Controller
 {
     protected $data;

@@ -19,4 +19,10 @@ class UtilsHelper
         $return = str_replace('.', '', $value);
         return str_replace(',', '.', $return);
     }
+
+    public static function removeSpaces($value): string
+    {
+        return str_replace(' ', '', $value);
+    }
+
 }

@@ -132,21 +132,71 @@ if ($('#sale').length) {
         $('#qtd').attr("disabled", true)
     }
 
+    function saveSale(){
+
+        let items = [];
+
+        $('#tableItens').find("tbody tr").each(function () {
+            items.push({ 
+                idProduct: $(this).find("td:eq(0)").html(),
+                description: $(this).find("td:eq(1)").html(),
+                priceUni: realDecimal($(this).find("td:eq(2)").html()),
+                amount: $(this).find("td:eq(3)").html(),
+                percentageImposed: $(this).find("td:eq(4)").html(),
+                totalPay: realDecimal($(this).find("td:eq(5)").html())
+            })
+        })
+
+       const dataSale = {
+            totalImposed: (realDecimal($('#totalImposed').val())).trim(),
+            totalSale: (realDecimal($('#totalSale').val())).trim(),
+            totalPay: (realDecimal($('#totalPay').val())).trim(),
+            items: items
+        };
+
+        $.ajax({
+            type: "POST",
+            url: `${BASE_URL}/savesale`,
+            data: dataSale,
+            dataType: 'json',
+            success: function (data) {
+                console.log(data)
+            
+                // Swal.fire({
+                //     icon: data.data.icon,
+                //     title: data.message,
+                //     showConfirmButton: false,
+                //     timer: 2000
+                // })
+            },
+            error: function (data) {
+                console.log(data);
+            }
+        });
+
+    }
+
     function filltable() {
         let qtd = $('#qtd').val();
         let pri = realDecimal(itenTable.price);
         let imposed = (itenTable.imposed / 100) + 1;
         let ttl = (pri * qtd) * imposed;
         strItem = `
-        <tr>
+        <tr  class="">
             <td>${itenTable.idProduct}</td>
             <td>${itenTable.description}</td>
+            <td>R$ ${itenTable.price}</td>
             <td>${qtd}</td>
             <td>${itenTable.imposed}</td>
             <td>${decimalReal(ttl)}</td>
         </tr>`
 
-        $('#tableItens').append(strItem)
+        $('#tableItens tbody').append(strItem);
+        $('#btnSave').removeClass('disabled');
     }
+
+    
+
+
 
 }

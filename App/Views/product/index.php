@@ -51,7 +51,7 @@
                         <label for="price">Preço</label>
                     </div>
                     <div class="input-field col s4">
-                        <select class="browser-default typeProduct" id="typeProduct" name="typeProduct">
+                        <select class="browser-default typeProduct" id="typeProduct" name="typeProduct" required>
                             <option value="" disabled selected>Tipo de Produto</option>
                         </select>
                     </div>
