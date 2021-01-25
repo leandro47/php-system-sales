@@ -63,13 +63,13 @@ class SaleService
 
         foreach ($itens as $row) {
 
-            $item['idSale'] = $result;
-            $item['idProduct'] = $row['idProduct'];
+            $item['id_sale'] = $result;
+            $item['id_product'] = $row['id_product'];
             $item['description'] = $row['description'];
             $item['amount'] = $row['amount'];
-            $item['priceUni'] = $row['priceUni'];
-            $item['percentageImposed'] = $row['percentageImposed'];
-            $item['totalPay'] = $row['totalPay'];
+            $item['price_uni'] = $row['price_uni'];
+            $item['percentage_imposed'] = $row['percentage_imposed'];
+            $item['total_pay'] = $row['total_pay'];
 
             $this->insertItens($item);
         }

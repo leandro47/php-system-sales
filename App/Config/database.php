@@ -5,10 +5,10 @@
 // ==================================================
 
 $database['host']     = 'localhost';
-$database['port']     =  3306;
-$database['user']     = 'root';
-$database['password'] = 'Iamthe@009';
+$database['port']     =  5432;
+$database['user']     = 'postgres';
+$database['password'] = '';
 $database['database'] = 'system_sale';
-$database['driver']   = 'mysql';
+$database['driver']   = 'pgsql';
 
 define("DATABASE", $database);

@@ -39,15 +39,15 @@ if ($('#sale_show').length) {
                 class: "center-align",
             },
             {
-                data: "percentageImposed",
+                data: "percentage_imposed",
                 class: "center-align",
             },
             {
-                data: "priceUni",
+                data: "price_uni",
                 class: "center-align",
             },
             {
-                data: "totalPay",
+                data: "total_pay",
                 class: "center-align",
             },
             ]
@@ -116,7 +116,7 @@ if ($('#sale_show').length) {
                 class: "center-align",
             },
             {
-                data: "dateRegister",
+                data: "date_register",
                 class: "center-align",
             },
             {

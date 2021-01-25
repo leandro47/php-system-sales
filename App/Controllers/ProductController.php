@@ -58,7 +58,7 @@ class ProductController extends Controller
 
     public function insert()
     {
-        $this->fields['idType'] = $this->post('typeProduct', true);
+        $this->fields['id_type'] = $this->post('typeProduct', true);
         $this->fields['description'] = $this->post('description', true);
         $this->fields['price'] = UtilsHelper::formatMoney($this->post('price', true));
 
@@ -76,7 +76,7 @@ class ProductController extends Controller
         $id = $this->put('idUpdate', true, FILTER_SANITIZE_NUMBER_INT);
         $this->fields['description'] = $this->put('updateDescription', true);
         $this->fields['price'] = UtilsHelper::formatMoney($this->put('updatePrice', true));
-        $this->fields['idType'] = $this->put('updateTypeProduct', true);
+        $this->fields['id_type'] = $this->put('updateTypeProduct', true);
 
         $validation = $this->productValidation->validateProduct($this->fields);
 

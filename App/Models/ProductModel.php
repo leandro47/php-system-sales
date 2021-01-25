@@ -16,13 +16,13 @@ class ProductModel extends Database
     {
         $sql = "SELECT pro.id, 
         pro.description,
-        FORMAT(pro.price, 2, 'de_DE')price,
-        (typ.description)typeProduct,
-        (typ.id)idType,
-        typ.percentageImposed 
+        to_char(pro.price, 'L9G999G990D99')price,
+        (typ.description)type_product,
+        (typ.id)id_type,
+        typ.percentage_imposed 
         from product as pro 
-        join typeProduct as typ 
-        on pro.idType = typ.id
+        join type_product as typ 
+        on pro.id_type = typ.id
         order by pro.id desc";
 
         return $this->run($sql);
@@ -30,13 +30,13 @@ class ProductModel extends Database
 
     public function getByType(int $idType)
     {
-        $sql = "SELECT * FROM product where idType = {$idType}";
+        $sql = "SELECT * FROM product where id_type = {$idType}";
         return $this->run($sql);
     }
 
     public function getById(int $id)
     {
-        $sql = "SELECT (p.id)idProduct , p.description, FORMAT(p.price, 2, 'de_DE')price, (t.percentageImposed)imposed FROM product as p join typeProduct as t on p.idType = t.id where p.id = {$id}";
+        $sql = "SELECT (p.id)id_product , p.description, to_char(p.price, 'L9G999G990D99')price, (t.percentage_imposed)imposed FROM product as p join type_product as t on p.id_type = t.id where p.id = {$id}";
         return $this->run($sql);
     }
 

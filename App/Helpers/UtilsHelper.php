@@ -14,9 +14,10 @@ class UtilsHelper
         }
     }
 
-    public static function formatMoney($value): float
+    public static function formatMoney($value) :float
     {
         $return = str_replace('.', '', $value);
+        $return = str_replace('R$', '', $return);
         return str_replace(',', '.', $return);
     }
 

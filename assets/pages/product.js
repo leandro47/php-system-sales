@@ -39,11 +39,11 @@ if ($('#product').length) {
                 class: "center-align",
             },
             {
-                data: "typeProduct",
+                data: "type_product",
                 class: "center-align",
             },
             {
-                data: "percentageImposed",
+                data: "percentage_imposed",
                 class: "center-align",
             },
             {
@@ -53,7 +53,7 @@ if ($('#product').length) {
                 defaultContent: ``,
                 render: function (data, type, row, meta) {
                     return `
-                    <a class="waves-effect yellow darken-2 btn-small" onclick="update('${data.id}','${data.description}','${data.price}','${data.idType}')"><i class="material-icons">create</i></a>
+                    <a class="waves-effect yellow darken-2 btn-small" onclick="update('${data.id}','${data.description}','${data.price}','${data.id_type}')"><i class="material-icons">create</i></a>
                     <a class="waves-effect orange darken-4 btn-small" onclick="deletar('${data.id}','${data.description}')"><i class="material-icons">delete_forever</i></a>
                     `
                 }

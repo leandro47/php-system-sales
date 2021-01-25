@@ -38,7 +38,7 @@ class TypeProductController extends Controller
     public function insert()
     {
         $this->fields['description'] = $this->post('description', true);
-        $this->fields['percentageImposed'] = $this->post('imposed', true);
+        $this->fields['percentage_imposed'] = $this->post('imposed', true);
 
         $validation = $this->typeProductValidation->validateTypeProduct($this->fields);
 
@@ -53,7 +53,7 @@ class TypeProductController extends Controller
     {
         $id = $this->put('idUpdate', true, FILTER_SANITIZE_NUMBER_INT);
         $this->fields['description'] = $this->put('updateDescription', true);
-        $this->fields['percentageImposed'] = $this->put('updateImposed', true);
+        $this->fields['percentage_imposed'] = $this->put('updateImposed', true);
 
         $validation = $this->typeProductValidation->validateTypeProduct($this->fields);
 

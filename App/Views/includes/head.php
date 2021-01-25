@@ -19,10 +19,10 @@
     </script>
 </head>
 
-<body class="teal lighten-5">
+<body class="indigo lighten-5">
     <div class="container">
         <nav>
-            <div class="nav-wrapper ">
+            <div class="nav-wrapper indigo darken-1">
                 <a href="<?= CONFIG['baseUrl'] . '/' ?>" class="brand-logo ml-4">PHP System Sale</a>
             </div>
         </nav>

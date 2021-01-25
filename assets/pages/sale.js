@@ -83,7 +83,7 @@ if ($('#sale').length) {
         let impUni = pric * imp;
         let total = ((pric * qtd) * (imp + 1));
 
-        $('#priceUnid').val(`R$ ${decimalReal(price)}`);
+        $('#priceUnid').val(`R$ ${(pric).trim()}`);
         $('#imposedUnid').val(decimalReal(impUni));
         $('#totalIten').val(decimalReal(total));
 
@@ -138,19 +138,19 @@ if ($('#sale').length) {
 
         $('#tableItens').find("tbody tr").each(function () {
             items.push({
-                idProduct: $(this).find("td:eq(0)").html(),
+                id_product: $(this).find("td:eq(0)").html(),
                 description: $(this).find("td:eq(1)").html(),
-                priceUni: realDecimal($(this).find("td:eq(2)").html()),
+                price_uni: realDecimal($(this).find("td:eq(2)").html()),
                 amount: $(this).find("td:eq(3)").html(),
-                percentageImposed: $(this).find("td:eq(4)").html(),
-                totalPay: realDecimal($(this).find("td:eq(5)").html())
+                percentage_imposed: $(this).find("td:eq(4)").html(),
+                total_pay: realDecimal($(this).find("td:eq(5)").html())
             })
         })
 
         const dataSale = {
-            totalImposed: (realDecimal($('#totalImposed').val())).trim(),
-            totalSale: (realDecimal($('#totalSale').val())).trim(),
-            totalPay: (realDecimal($('#totalPay').val())).trim(),
+            total_imposed: (realDecimal($('#totalImposed').val())).trim(),
+            total_sale: (realDecimal($('#totalSale').val())).trim(),
+            total_pay: (realDecimal($('#totalPay').val())).trim(),
             items: items
         };
 
@@ -184,9 +184,9 @@ if ($('#sale').length) {
         let ttl = (pri * qtd) * imposed;
         strItem = `
         <tr  class="">
-            <td>${itenTable.idProduct}</td>
+            <td>${itenTable.id_product}</td>
             <td>${itenTable.description}</td>
-            <td>R$ ${itenTable.price}</td>
+            <td>${itenTable.price}</td>
             <td>${qtd}</td>
             <td>${itenTable.imposed}</td>
             <td>${decimalReal(ttl)}</td>

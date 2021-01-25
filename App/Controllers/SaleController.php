@@ -32,9 +32,9 @@ class SaleController extends Controller
 
     public function insert()
     {
-        $this->fields['totalImposed'] = $this->post('totalImposed', true);
-        $this->fields['totalSale'] = $this->post('totalSale', true);
-        $this->fields['totalPay'] = $this->post('totalPay', true);
+        $this->fields['total_imposed'] = $this->post('total_imposed', true);
+        $this->fields['total_sale'] = $this->post('total_sale', true);
+        $this->fields['total_pay'] = $this->post('total_pay', true);
         $itens = $this->post('items');
 
         $validation = $this->saleValidation->validateSale($this->fields);

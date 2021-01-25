@@ -1,5 +1,5 @@
-<footer class="page-footer">
-    <div class="container">
+<footer class="page-footer indigo lighten-1">
+    <div class="container indigo lighten-1">
         <div class="row">
             <div class="col l6 s12">
                 <h5 class="white-text">PHP System Sale</h5>
@@ -7,7 +7,7 @@
             </div>
         </div>
     </div>
-    <div class="footer-copyright">
+    <div class="footer-copyright indigo lighten-1">
         <div class="container">
             Powered by <a href="https://www.linkedin.com/in/leandro-silva-a5b84318b/" target="_blank">Leandro47</a>
         </div>

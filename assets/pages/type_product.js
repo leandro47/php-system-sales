@@ -34,7 +34,7 @@ if ($('#type_product').length) {
                 class: "center-align",
             },
             {
-                data: "percentageImposed",
+                data: "percentage_imposed",
                 class: "center-align",
             },
             {
@@ -44,7 +44,7 @@ if ($('#type_product').length) {
                 defaultContent: ``,
                 render: function (data, type, row, meta) {
                     return `
-                    <a class="waves-effect yellow darken-2 btn-small" onclick="update('${data.id}','${data.description}','${data.percentageImposed}')"><i class="material-icons">create</i></a>
+                    <a class="waves-effect yellow darken-2 btn-small" onclick="update('${data.id}','${data.description}','${data.percentage_imposed}')"><i class="material-icons">create</i></a>
                     <a class="waves-effect orange darken-4 btn-small" onclick="deletar('${data.id}','${data.description}')"><i class="material-icons">delete_forever</i></a>
                     `
                 }

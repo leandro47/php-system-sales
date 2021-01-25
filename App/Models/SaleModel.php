@@ -19,19 +19,19 @@ class SaleModel extends Database
 
     public function insertItem(array $datas)
     {
-        $this->table = 'itensSale';
+        $this->table = 'itens_sale';
         return $this->insert($datas);
     }
 
     public function getAll()
     {
-        $sql = "SELECT s.id, FORMAT(s.totalImposed, 2, 'de_DE')imposed, FORMAT(s.totalSale, 2, 'de_DE')sale, FORMAT(s.totalPay, 2, 'de_DE')pay, dateRegister from sale as s";
+        $sql = "SELECT s.id, to_char(s.total_imposed, 'L9G999G990D99')imposed, to_char(s.total_sale, 'L9G999G990D99')sale, to_char(s.total_pay, 'L9G999G990D99')pay, date_register from sale as s";
         return $this->run($sql);
     }
 
     public function getItens(int $id)
     {
-        $sql = "SELECT description, amount, FORMAT(priceUni, 2, 'de_DE')priceUni, percentageImposed,  FORMAT(totalPay, 2, 'de_DE')totalPay   from itensSale where idSale = {$id}";
+        $sql = "SELECT description, amount, to_char(price_uni,'L9G999G990D99')price_uni, percentage_imposed,  to_char(total_pay, 'L9G999G990D99')total_pay from itens_sale where id_sale = {$id}";
         return $this->run($sql);
     }
 

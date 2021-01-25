@@ -9,7 +9,7 @@ class TypeProductModel extends Database
     public function __construct()
     {
         parent::__construct();
-        $this->table = 'typeProduct';
+        $this->table = 'type_product';
     }
 
     public function getAll()
