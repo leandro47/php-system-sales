@@ -26,7 +26,7 @@
 
         <div class="input-field col s12 m4">
             <i class="material-icons prefix">loupe</i>
-            <input id="qtd" name="qtd" value="1" onkeyup="datasItem()" onclick="datasItem()" onkeypress="return event.charCode >= 48" min="1" type="number" class="validate" required>
+            <input id="qtd" name="qtd" disabled value="1" onkeyup="datasItem()" onclick="datasItem()" onkeypress="return event.charCode >= 48" min="1" type="number" class="validate" required>
             <label for="qtd">Quantidade</label>
         </div>
 
@@ -87,17 +87,18 @@
             <h5>Itens</h5>
         </div>
         <div class="col s12">
-            <table class="responsive-table" id="table_itenSale">
+            <table class="responsive-table" id="tableItens">
                 <thead class="head-table">
                     <tr>
+                        <th>Id Produto</th>
                         <th>Produto</th>
                         <th>Qtd.</th>
                         <th>% Imposto</th>
                         <th>TotalPago</th>
                     </tr>
                 </thead>
-
                 <tbody>
+                   
                 </tbody>
             </table>
         </div>

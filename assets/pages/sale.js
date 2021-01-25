@@ -2,10 +2,11 @@ if ($('#sale').length) {
 
     var itenSaleImpo = 0;
     var itenSalePrice = 0;
-    var itemTable = null;
+    var itenTable = null;
 
     $(document).ready(function () {
         requestType();
+
     })
 
     function requestType() {
@@ -65,13 +66,14 @@ if ($('#sale').length) {
             dataType: 'json',
             success: function (data) {
                 fillItem(data[0].price, data[0].imposed, qtd);
-                itemTable = data[0];
+                itenTable = data[0];
             },
             error: function (data) {
                 console.error(data);
             }
         });
         $('#btnAdd').removeClass('disabled')
+        $('#qtd').removeAttr("disabled", true)
     }
 
     function fillItem(price, imposed, qtd) {
@@ -115,7 +117,7 @@ if ($('#sale').length) {
         $('#totalPay').val(total);
 
         //addTable
-        getItensTable();
+        filltable();
 
         $('#qtd').val(1);
         $('#priceUnid').val(`R$ 0,00`);
@@ -127,22 +129,24 @@ if ($('#sale').length) {
 
         requestType();
         $('#btnAdd').addClass('disabled')
+        $('#qtd').attr("disabled", true)
     }
 
-    function getItensTable() {
+    function filltable() {
         let qtd = $('#qtd').val();
-        let pri = realDecimal(itemTable.price);
-        let imposed = (itemTable.imposed / 100) + 1;
+        let pri = realDecimal(itenTable.price);
+        let imposed = (itenTable.imposed / 100) + 1;
         let ttl = (pri * qtd) * imposed;
         strItem = `
         <tr>
-            <td>${itemTable.description}</td>
+            <td>${itenTable.idProduct}</td>
+            <td>${itenTable.description}</td>
             <td>${qtd}</td>
-            <td>${itemTable.imposed}</td>
+            <td>${itenTable.imposed}</td>
             <td>${decimalReal(ttl)}</td>
         </tr>`
 
-        $('#table_itenSale').append(strItem)
+        $('#tableItens').append(strItem)
     }
 
 }
