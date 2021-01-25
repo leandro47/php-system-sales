@@ -132,12 +132,12 @@ if ($('#sale').length) {
         $('#qtd').attr("disabled", true)
     }
 
-    function saveSale(){
+    function saveSale() {
 
         let items = [];
 
         $('#tableItens').find("tbody tr").each(function () {
-            items.push({ 
+            items.push({
                 idProduct: $(this).find("td:eq(0)").html(),
                 description: $(this).find("td:eq(1)").html(),
                 priceUni: realDecimal($(this).find("td:eq(2)").html()),
@@ -147,7 +147,7 @@ if ($('#sale').length) {
             })
         })
 
-       const dataSale = {
+        const dataSale = {
             totalImposed: (realDecimal($('#totalImposed').val())).trim(),
             totalSale: (realDecimal($('#totalSale').val())).trim(),
             totalPay: (realDecimal($('#totalPay').val())).trim(),
@@ -160,14 +160,15 @@ if ($('#sale').length) {
             data: dataSale,
             dataType: 'json',
             success: function (data) {
-                console.log(data)
-            
-                // Swal.fire({
-                //     icon: data.data.icon,
-                //     title: data.message,
-                //     showConfirmButton: false,
-                //     timer: 2000
-                // })
+
+                Swal.fire({
+                    icon: data.data.icon,
+                    title: data.message,
+                    showConfirmButton: false,
+                    timer: 2000
+                })
+
+                emptyFields();
             },
             error: function (data) {
                 console.log(data);
@@ -195,7 +196,26 @@ if ($('#sale').length) {
         $('#btnSave').removeClass('disabled');
     }
 
-    
+    function emptyFields() {
+
+        $('#tableItens tbody').empty()
+        $('#totalImposed').val(`0,00`)
+        $('#totalSale').val(`0,00`)
+        $('#totalPay').val(`0,00`)
+        $('#totalQtdItens').val(`0`)
+
+        $('#qtd').val(1);
+        $('#priceUnid').val(`R$ 0,00`);
+        $('#imposedUnid').val(`R$ 0,00`);
+        $('#totalIten').val(`R$ 0,00`);
+
+        $(".product option").remove();
+        $('.product').append(`<option value='' disabled selected>Produto</option>`);
+
+        requestType();
+        $('#btnAdd').addClass('disabled')
+        $('#qtd').attr("disabled", true)
+    }
 
 
 

@@ -50,4 +50,12 @@ class SaleController extends Controller
         $sale = $this->saleService->insert($this->fields, $itens);
         Response::sendDatas($sale);
     }
+
+    public function getAll()
+    { 
+        View::load('includes/head', $this->data);
+        View::load('sale/show', $this->data);
+        View::load('includes/footer', $this->data);
+        View::load('includes/scripts', $this->data);
+    }
 }
