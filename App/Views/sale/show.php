@@ -25,10 +25,44 @@
                     </tr>
                 </thead>
                 <tbody>
-                 
+
                 </tbody>
             </table>
         </div>
     </div>
     <br>
+</div>
+
+<div id="modalShow" class="modal">
+    <form id="delete" action="" method="">
+        <input id="idDelete" hidden name="idDelete" type="text" class="" required>
+        <div class="modal-content">
+            <h4>Visualizar</h4>
+            <div class="divider"></div>
+            <div class="row mt-4">
+                <div class="row">
+                    <div class="s12">
+                        <table class="" id="table_itens">
+                            <thead class="head-table">
+                                <tr>
+                                    <th>Produto</th>
+                                    <th>Qtd.</th>
+                                    <th>% Imposto</th>
+                                    <th>Preço Uni.</th>
+                                    <th>Total Pago</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="divider"></div>
+        </div>
+        <div class="modal-footer">
+            <a href="#!" class="modal-close waves-effect grey lighten-1 btn">Fechar</a>
+        </div>
+    </form>
 </div>

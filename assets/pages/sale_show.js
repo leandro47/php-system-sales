@@ -4,21 +4,59 @@ if ($('#sale_show').length) {
         requestDatas();
     })
 
-    function showItens(id){
-        console.log(id)
-        $.ajax({
-            type: "GET",
-            url: `${BASE_URL}/getitens/${id}`,
-            dataType: 'json',
-            success: function (data) {
-              console.log(data)
+    function showItens(id) {
+
+        $('#table_itens tbody').empty()
+
+        tableArea = $(`#table_itens`).DataTable({
+            sPaginationType: "full_numbers",
+            destroy: true,
+            responsive: false,
+            ajax: {
+                url: `${BASE_URL}/getitens/${id}`,
+                dataType: "json",
+                cache: false,
+                dataSrc: (data) => {
+                    return data || []
+                },
+                error: (e) => {
+                },
+                beforeSend: () => {
+                },
+                complete: () => {
+                    $('#modalShow').modal('open');
+                }
             },
-            error: function (data) {
-            }
-        });
+            order: [
+
+            ],
+            columns: [{
+                data: "description",
+                class: "center-align",
+            },
+            {
+                data: "amount",
+                class: "center-align",
+            },
+            {
+                data: "percentageImposed",
+                class: "center-align",
+            },
+            {
+                data: "priceUni",
+                class: "center-align",
+            },
+            {
+                data: "totalPay",
+                class: "center-align",
+            },
+            ]
+        })
+
+
     }
 
-    function del(id){
+    function del(id) {
         $.ajax({
             type: "DELETE",
             url: `${BASE_URL}/deletesale/${id}`,
