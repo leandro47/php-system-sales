@@ -51,11 +51,29 @@ class SaleController extends Controller
         Response::sendDatas($sale);
     }
 
-    public function getAll()
-    { 
+    public function show()
+    {
         View::load('includes/head', $this->data);
         View::load('sale/show', $this->data);
         View::load('includes/footer', $this->data);
         View::load('includes/scripts', $this->data);
+    }
+
+    public function getAll()
+    {
+        $result = $this->saleService->getAll();
+        Response::sendDatas($result);
+    }
+
+    public function getItens(int $id)
+    {
+        $result = $this->saleService->getItens($id);
+        Response::sendDatas($result);
+    }
+
+    public function deleteSale(int $id)
+    {
+        $delete = $this->saleService->deleteSale($id);
+        return Response::sendDatas($delete);
     }
 }

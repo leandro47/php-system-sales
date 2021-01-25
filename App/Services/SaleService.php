@@ -15,6 +15,38 @@ class SaleService
         $this->errors = null;
     }
 
+    public function getAll()
+    {
+        return $this->saleModel->getAll();
+    }
+
+    public function getItens(int $id)
+    {
+        return $this->saleModel->getItens($id);
+    }
+
+    public function deleteSale(int $id)
+    {
+        $result = $this->saleModel->deleteSale($id);
+
+        if ($result) {
+            return [
+                'code' => Response::HTTP_INTERNAL_SERVER_ERROR,
+                'message' => $result,
+                'data' => [
+                    'icon' => 'error'
+                ]
+            ];
+        }
+        return [
+            'code' => Response::HTTP_OK,
+            'message' => 'Deletado com sucesso!',
+            'data' => [
+                'icon' => 'success'
+            ]
+        ];
+    }
+
     public function insert(array $datas, array $itens): array
     {
         $result = $this->saleModel->insertSale($datas);
@@ -51,7 +83,7 @@ class SaleService
                 ]
             ];
         }
-        
+
         return [
             'code' => Response::HTTP_INTERNAL_SERVER_ERROR,
             'message' => $this->errors,

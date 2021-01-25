@@ -34,7 +34,7 @@
             <ul>
                 <li><a href="<?= CONFIG['baseUrl'] . "/categoria" ?>" class="btn-floating green tooltipped" data-position="left" data-tooltip="Tipo produto"><i class="material-icons">format_list_bulleted</i></a></li>
                 <li><a href="<?= CONFIG['baseUrl'] . "/product" ?>" class="btn-floating blue tooltipped" data-position="left" data-tooltip="Produto"><i class="material-icons">shopping_cart</i></a></li>
+                <li><a href="<?= CONFIG['baseUrl'] . '/showsale' ?>" class="btn-floating pink tooltipped" data-position="left" data-tooltip="Visualizar Vendas"><i class="material-icons">remove_red_eye</i></a></li>
                 <li><a href="<?= CONFIG['baseUrl'] . '/' ?>" class="btn-floating purple tooltipped" data-position="left" data-tooltip="Inicio"><i class="material-icons">home</i></a></li>
-
             </ul>
         </div>

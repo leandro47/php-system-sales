@@ -10,6 +10,7 @@
 <script src="<?= CONFIG['baseUrl'] . '/assets/pages/type_product.js' ?>"></script>
 <script src="<?= CONFIG['baseUrl'] . '/assets/pages/product.js' ?>"></script>
 <script src="<?= CONFIG['baseUrl'] . '/assets/pages/sale.js' ?>"></script>
+<script src="<?= CONFIG['baseUrl'] . '/assets/pages/sale_show.js' ?>"></script>
 
 </body>
 
