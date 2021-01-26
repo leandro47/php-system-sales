@@ -53,4 +53,3 @@ php -S localhost:8080
 ```
 
 ### You can see me running [here](https://leandro47.com/php-pdv/) ... 
-(microsoft edge browser preferably ;D)
